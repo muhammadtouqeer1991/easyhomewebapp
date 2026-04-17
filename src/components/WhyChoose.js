@@ -48,7 +48,7 @@ export default function WhyChoose() {
           <Col lg={6}>
             <div className={styles.imageWrapper}>
               <img
-                src="/whychooseImg.jpg"
+                src="/whychooseImg.webp"
                 alt="Mortgage"
                 className={styles.image}
               />

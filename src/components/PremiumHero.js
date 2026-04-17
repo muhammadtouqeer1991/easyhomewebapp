@@ -36,7 +36,7 @@ export default function PremiumHero({ slug, title, desc, btntext, img }) {
                 alt="Alt"
                 width={300}
                 height={300}
-                style={{ objectFit: "contain" }}
+                style={{ objectFit: "cover" }}
               />
             </div>
           </Col>
