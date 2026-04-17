@@ -1,0 +1,52 @@
+.wrapper {
+  padding: 0px 0;
+  background: #fff;
+}
+
+.badge {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-size: 40px;
+  font-weight: 500;
+  color: #222;
+}
+
+/* SLIDER */
+.slider {
+  overflow: hidden;
+  position: relative;
+}
+
+.slideTrack {
+  display: flex;
+  width: calc(200px * 8);
+  animation: scroll 20s linear infinite;
+}
+
+.slide {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide img {
+  max-width: 120px;
+  opacity: 0.8;
+}
+
+/* Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

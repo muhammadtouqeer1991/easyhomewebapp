@@ -1,0 +1,96 @@
+:root {
+  --primary: #5fb43d;
+  --secondary: #1855a5;
+  --dark: #000;
+  --white: #fff;
+}
+.hero {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #f8f8f8, #f8f8f8);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.breadcrumb a {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.breadcrumb .active {
+  color: #111;
+  font-weight: 500;
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+/* Title */
+.title {
+  font-size: 43px;
+  font-weight: 700;
+  color: #0b1320;
+  line-height: 1.2;
+}
+
+/* Description */
+.desc {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #5c677d;
+  /* max-width: 500px; */
+}
+
+/* Button */
+.btn {
+  margin-top: 25px;
+  padding: 12px 26px;
+  border-radius: 8px;
+  background: var(--primary);
+  border: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+}
+
+/* RIGHT DESIGN */
+.designBox {
+  position: relative;
+  height: 300px;
+}
+
+/* Big soft circle */
+.circle {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #0d6efd33, transparent);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 50px;
+  filter: blur(10px);
+}
+
+/* Small floating circle */
+.circleSmall {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #00c6ff55, transparent);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  filter: blur(8px);
+}

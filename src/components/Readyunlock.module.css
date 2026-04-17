@@ -1,0 +1,61 @@
+:root {
+  --primary: #5fb43d;
+  --secondary: #1855a5;
+  --dark: #000;
+  --white: #fff;
+}
+.wrapper {
+  padding: 50px 0;
+  position: relative;
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: 800;
+  color: #000;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+.primaryBtn {
+  background: var(--primary);
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+.primaryBtn:hover {
+  background: var(--primary);
+  border: none;
+}
+
+.secondaryBtn {
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* RIGHT ICON */
+.iconWrapper {
+  position: relative;
+}
+
+.keyIcon {
+  font-size: 120px;
+  color: transparent;
+  stroke: url(#gradient);
+  stroke-width: 8;
+}
+
+/* OPTIONAL: Fake gradient using text-shadow fallback */
+.keyIcon {
+  color: #7b2ff7;
+  opacity: 0.9;
+}
