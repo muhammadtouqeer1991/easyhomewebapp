@@ -3,7 +3,6 @@ import WhyChoose from "@/components/WhyChoose";
 import FAQSection from "@/components/FAQSection";
 import React from "react";
 import MortgageSection from "@/components/MortgageSection";
-import MortgageCalculator from "@/components/MortgageCalculator";
 import Readyunlock from "@/components/Readyunlock";
 
 const page = () => {
