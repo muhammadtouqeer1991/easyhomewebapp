@@ -47,6 +47,9 @@ const Menu = () => {
                   <Link className="dropdown-item" href="/handover-payment">
                     Handover Payment
                   </Link>
+                  <Link className="dropdown-item" href="/oqood-resale">
+                    Oqood Resale
+                  </Link>
                 </NavDropdown>
                 <Link className="nav-link" href="/non-resident-mortgage">
                   Non-Resident Mortgage
