@@ -1,3 +1,4 @@
+import ContentScrollSection from "@/components/ContentScrollSection";
 import CreativeContact from "@/components/CreativeContact";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
@@ -18,6 +19,8 @@ const page = () => {
       <MortgageCalculator />
       <MortgageSection />
       <WhyChooseUs />
+
+      <ContentScrollSection />
       <Readyunlock />
       <ServicesSlider />
       <FAQSection img={"/faqmen.png"} />
