@@ -12,6 +12,14 @@ const Oopmortgageinfo = () => {
     "Fast-track approvals with Windsor’s assisted documentation process",
   ];
 
+  const keyFeatures2 = [
+    "Mortgage options available for secondary off-plan units",
+    "Bank coordination with developer and seller",
+    "Competitive rates and flexible payment structures",
+    "Full DLD compliance with updated Oqood assignment procedures",
+    "Available for both residents and non-residents",
+  ];
+
   const whoFor = [
     "Self-employed entrepreneurs or business owners",
     "Freelancers or consultants with irregular income streams",
@@ -31,8 +39,15 @@ const Oopmortgageinfo = () => {
               color: "#1f2937",
             }}
           >
-            Key Features:
+            Buying an Off-Plan Property on Resale? We Make It Easy
           </h3>
+          <p>
+            Oqood resale transactions involve the sale of an under-construction
+            (off-plan) property that is already registered under the Dubai Land
+            Department’s Oqood system. Financing such deals can be complex—but
+            with Windsor Premier’s expertise, we make it smooth, compliant, and
+            fast.
+          </p>
           <ul style={{ listStyle: "none", padding: 0, lineHeight: "2" }}>
             {keyFeatures.map((item, idx) => (
               <li
@@ -84,12 +99,16 @@ const Oopmortgageinfo = () => {
               color: "#1f2937",
             }}
           >
-            Who is this for?
+            What is an Oqood Resale?
           </h3>
           <p
             style={{ color: "#4b5563", fontSize: "16px", marginBottom: "20px" }}
           >
-            This mortgage product is ideal for UAE residents who are:
+            An Oqood resale is when a buyer purchases an off-plan property from
+            an existing buyer (not the developer) before the handover. The
+            transaction is registered under the DLD’s Oqood system, and a
+            mortgage can be arranged for eligible buyers—subject to bank and
+            developer approval.
           </p>
           <ul style={{ listStyle: "none", padding: 0, lineHeight: "2" }}>
             {whoFor.map((item, idx) => (
@@ -141,10 +160,10 @@ const Oopmortgageinfo = () => {
               color: "#1f2937",
             }}
           >
-            Key Features:
+            Key Benefits of Financing an Oqood Resale with Us:
           </h3>
           <ul style={{ listStyle: "none", padding: 0, lineHeight: "2" }}>
-            {keyFeatures.map((item, idx) => (
+            {keyFeatures2.map((item, idx) => (
               <li
                 key={idx}
                 style={{
