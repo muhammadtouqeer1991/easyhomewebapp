@@ -50,6 +50,9 @@ const Menu = () => {
                   <Link className="dropdown-item" href="/oqood-resale">
                     Oqood Resale
                   </Link>
+                  <Link className="dropdown-item" href="/first-time-buyers">
+                    First-Time Buyer
+                  </Link>
                 </NavDropdown>
                 <Link className="nav-link" href="/non-resident-mortgage">
                   Non-Resident Mortgage
