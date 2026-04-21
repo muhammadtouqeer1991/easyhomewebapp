@@ -4,19 +4,48 @@ import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaCheckCircle } from "react-icons/fa";
 
+const content = [
+  {
+    title: "Your Journey Towards Owning a Perfect Property Starts Here",
+    paragraphs: [
+      "Finding the right property is not just about location — it’s about long-term value, security, and peace of mind Finding the right property is not just about location — it’s about long-term value, security, and peace of mind Finding the right property is not just about location — it’s about long-term value, security, and peace of mind.",
+      "We carefully select projects that align with your financial goals and lifestyle needs so you never have to compromise.",
+    ],
+    points: [
+      "Verified and Trusted Projects",
+      "Flexible Installment Plans",
+      "Prime Locations",
+    ],
+    moreText:
+      "Our goal is to simplify your buying journey with complete transparency and expert guidance at every step oal is to simplify your buying journey with complete transparency and expert guidance at every step.",
+  },
+  {
+    title: "Secure Investments with High Returns for Modern Buyers",
+    paragraphs: [
+      "Real estate remains one of the most powerful ways to build wealth over time. We ensure every opportunity we present has strong growth potential and minimal risk  We ensure every opportunity we present has strong growth potential and minimal risk  ",
+      "We ensure every opportunity we present has strong growth potential and minimal risk mains one of the most powerful ways to build wealth over time. We ensure ev mains one of the most powerful ways to build wealth over time. We ensure ev  .",
+    ],
+    points: [
+      "Transparent Pricing",
+      "Quick Booking Process",
+      "Legal Assistance",
+    ],
+    moreText:
+      "With our expert insights, you can confidently invest in properties that deliver both stability and growth.",
+  },
+];
+
 export default function ContentScrollSection() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const section = document.getElementById("long-content");
-      if (section) {
-        const top = section.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
+      const section = document.querySelector(".scroll-area");
+      if (!section) return;
 
-        if (top < windowHeight - 100) {
-          setVisible(true);
-        }
+      const top = section.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        setVisible(true);
       }
     };
 
@@ -28,118 +57,67 @@ export default function ContentScrollSection() {
 
   return (
     <>
-      <section id="long-content" className="long-section">
+      <section className="wrapper">
         <Container>
-          <Row className="scrollcontent">
-            {/* LEFT SIDE */}
-            <Col md={6} className={`content ${visible ? "show" : ""}`}>
-              <h2>
-                Your Journey Towards Owning a Perfect Property Starts Here with
-                Trusted Experts and Flexible Planning Options
-              </h2>
+          <div className="scroll-area">
+            <Row>
+              {content.map((col, index) => (
+                <Col md={6} key={index}>
+                  <div className={`content-box ${visible ? "show" : ""}`}>
+                    <h2>{col.title}</h2>
 
-              <p>
-                Finding the right property is not just about location — it’s
-                about security, long-term value, and peace of mind. We bring you
-                carefully selected projects that match your vision and financial
-                comfort, ensuring you never have to compromise.
-              </p>
+                    {col.paragraphs.map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
 
-              <p>
-                Our platform connects you directly with verified developers,
-                making the entire process smooth and transparent from start to
-                finish. Whether you're planning your first home or investing for
-                the future, we provide complete guidance at every step.
-              </p>
+                    {/* Points */}
+                    <ul className="list">
+                      {col.points.map((point, i) => (
+                        <li key={i}>
+                          <FaCheckCircle /> {point}
+                        </li>
+                      ))}
+                    </ul>
 
-              <ul className="list">
-                <li>
-                  <FaCheckCircle /> Verified and Trusted Projects Only
-                </li>
-                <li>
-                  <FaCheckCircle /> Flexible Installment Plans
-                </li>
-                <li>
-                  <FaCheckCircle /> Prime Locations Across the City
-                </li>
-              </ul>
-
-              <p>
-                We understand that every buyer has unique needs. That’s why our
-                solutions are designed to adapt to your requirements — from
-                budget-friendly options to premium investments.
-              </p>
-
-              <p>
-                With a strong focus on customer satisfaction, we ensure that
-                every detail is handled professionally so you can move forward
-                with confidence.
-              </p>
-            </Col>
-
-            {/* RIGHT SIDE */}
-            <Col md={6} className={`content ${visible ? "show" : ""}`}>
-              <h2>
-                Secure Investments with High Returns and a Hassle-Free Buying
-                Experience Tailored for Modern Buyers
-              </h2>
-
-              <p>
-                Real estate investment is one of the most reliable ways to build
-                long-term wealth. Our carefully curated projects offer strong
-                growth potential while minimizing risks.
-              </p>
-
-              <p>
-                From documentation to booking and final possession, our process
-                is streamlined to save you time and effort. We eliminate
-                unnecessary complexities so you can focus on making the right
-                decision.
-              </p>
-
-              <ul className="list">
-                <li>
-                  <FaCheckCircle /> Transparent Pricing Structure
-                </li>
-                <li>
-                  <FaCheckCircle /> Quick Booking & Approval
-                </li>
-                <li>
-                  <FaCheckCircle /> Dedicated Customer Support
-                </li>
-                <li>
-                  <FaCheckCircle /> Legal & Documentation Assistance
-                </li>
-              </ul>
-
-              <p>
-                Our goal is to provide you with not just a property, but a
-                secure future. With expert insights and market knowledge, we
-                guide you towards investments that truly matter.
-              </p>
-
-              <p>
-                Take the first step today and explore opportunities that bring
-                both comfort and financial growth together in one place.
-              </p>
-            </Col>
-          </Row>
+                    <p>{col.moreText}</p>
+                  </div>
+                </Col>
+              ))}
+            </Row>
+          </div>
         </Container>
       </section>
 
-      {/* INTERNAL CSS */}
       <style jsx>{`
-        .long-section {
-          padding: 100px 0;
-          background: #ffffff;
+        .wrapper {
+          padding: 20px 0;
+          // background: #f9fafb;
         }
-        .scrollcontent {
-          height: 300px;
-          overflow: scroll;
+
+        /* SCROLL AREA */
+        .scroll-area {
+          max-height: 450px;
+          overflow-y: auto;
+
+          padding: 20px 20px;
+        }
+
+        .content-box {
+          padding: 20px;
+          margin-bottom: 40px;
+          opacity: 0;
+          transform: translateY(40px);
+          transition: all 0.7s ease;
+          box-shadow: 0px 0px 10px #3333;
+        }
+
+        .show {
+          opacity: 1;
+          transform: translateY(0);
         }
 
         h2 {
-          font-size: 32px;
+          font-size: 28px;
           font-weight: 700;
           margin-bottom: 20px;
           line-height: 1.4;
@@ -148,8 +126,8 @@ export default function ContentScrollSection() {
         p {
           font-size: 16px;
           color: #555;
-          margin-bottom: 15px;
           line-height: 1.7;
+          margin-bottom: 15px;
         }
 
         .list {
@@ -170,21 +148,24 @@ export default function ContentScrollSection() {
           color: #28a745;
         }
 
-        /* Scroll Animation */
-        .content {
-          opacity: 0;
-          transform: translateY(60px);
-          transition: all 0.8s ease;
+        /* Scrollbar */
+        .scroll-area::-webkit-scrollbar {
+          width: 6px;
+          background: #1855a5;
         }
 
-        .show {
-          opacity: 1;
-          transform: translateY(0);
+        .scroll-area::-webkit-scrollbar-thumb {
+          background: #5fb43d;
+          border-radius: 10px;
         }
 
         @media (max-width: 768px) {
+          .scroll-area {
+            max-height: 350px;
+          }
+
           h2 {
-            font-size: 26px;
+            font-size: 22px;
           }
         }
       `}</style>

@@ -29,9 +29,6 @@ const Menu = () => {
                   <Link className="dropdown-item" href="/residential-mortgages">
                     Residential Mortgages
                   </Link>
-                  <Link className="dropdown-item" href="/non-resident-mortgage">
-                    Non-Resident Mortgage
-                  </Link>
                   <Link
                     className="dropdown-item"
                     href="/self-employed-mortgages"
@@ -53,18 +50,17 @@ const Menu = () => {
                   <Link className="dropdown-item" href="/first-time-buyers">
                     First-Time Buyer
                   </Link>
+                  <Link className="dropdown-item" href="/buyout-transaction">
+                    Buyout Transaction
+                  </Link>
+                  <Link className="dropdown-item" href="/equity-release">
+                    Equity Release
+                  </Link>
                 </NavDropdown>
                 <Link className="nav-link" href="/non-resident-mortgage">
                   Non-Resident Mortgage
                 </Link>
-                <Link className="nav-link" href="#link">
-                  Golden Visa
-                </Link>
-                <NavDropdown title="Projects" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="#">
-                    Residential Mortgages
-                  </NavDropdown.Item>
-                </NavDropdown>
+
                 <Link className="nav-link" href="#link">
                   Property Investment
                 </Link>
