@@ -154,12 +154,12 @@ export default AffiliateAuth;
 
 const styles = {
   page: {
-    minHeight: "100vh",
+    // minHeight: "100vh",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    background: "#f3f6fb",
-    padding: "40px 15px",
+    // background: "#f3f6fb",
+    padding: "60px 15px",
   },
 
   container: {
