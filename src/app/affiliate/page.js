@@ -1,3 +1,4 @@
+import AffiliateAuth from "@/components/AffiliateAuth";
 import MortgageSection from "@/components/MortgageSection";
 import PremiumHero from "@/components/PremiumHero";
 import React from "react";
@@ -13,6 +14,7 @@ const page = () => {
         img={`/newvector.webp`}
       />
       <MortgageSection />
+      <AffiliateAuth />
     </>
   );
 };
