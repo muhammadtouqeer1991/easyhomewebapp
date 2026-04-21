@@ -1,5 +1,10 @@
+import DeveloperMortgageAbout from "@/components/DeveloperMortgageAbout";
 import MortgageSection from "@/components/MortgageSection";
+import OurTeam from "@/components/OurTeam";
 import PremiumHero from "@/components/PremiumHero";
+import TeamSlider from "@/components/TeamSlider";
+import UaePropertyAbout from "@/components/UaePropertyAbout";
+import WhychoosehandoverAbout from "@/components/WhychoosehandoverAbout";
 import React from "react";
 
 const page = () => {
@@ -13,6 +18,10 @@ const page = () => {
         img={`/newvector.webp`}
       />
       <MortgageSection />
+      <DeveloperMortgageAbout />
+      <UaePropertyAbout />
+      <WhychoosehandoverAbout />
+      <TeamSlider />
     </>
   );
 };
