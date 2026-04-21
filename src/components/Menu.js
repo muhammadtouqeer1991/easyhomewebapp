@@ -29,6 +29,9 @@ const Menu = () => {
                   <Link className="dropdown-item" href="/residential-mortgages">
                     Residential Mortgages
                   </Link>
+                  <Link className="dropdown-item" href="/non-resident-mortgage">
+                    Non-Resident Mortgage
+                  </Link>
                   <Link
                     className="dropdown-item"
                     href="/self-employed-mortgages"
@@ -56,19 +59,29 @@ const Menu = () => {
                   <Link className="dropdown-item" href="/equity-release">
                     Equity Release
                   </Link>
+                  <Link className="dropdown-item" href="/seller-buyout">
+                    Seller Buyout
+                  </Link>
                 </NavDropdown>
-                <Link className="nav-link" href="/non-resident-mortgage">
-                  Non-Resident Mortgage
+
+                <Link className="nav-link" href="/about-us">
+                  About Us
+                </Link>
+                <Link className="nav-link" href="/our-team">
+                  Our Team
                 </Link>
 
-                <Link className="nav-link" href="#link">
+                <Link className="nav-link" href="/property-investment">
                   Property Investment
+                </Link>
+                <Link className="nav-link" href="/contact-us">
+                  Contact Us
                 </Link>
               </Nav>
               <Nav className="ms-auto">
                 <Link
                   className="nav-link secondarybg px-lg-4 px-md-4 px-sm-4 px-3 text-white rounded"
-                  href="#link"
+                  href="/affiliate"
                 >
                   Broker Affiliate
                 </Link>
