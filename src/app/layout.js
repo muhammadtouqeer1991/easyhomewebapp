@@ -1,6 +1,7 @@
 import { Montserrat } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
+import "./media.css";
 import Topbar from "@/components/Topbar";
 import Menu from "@/components/Menu";
 import Footer from "@/components/Footer";

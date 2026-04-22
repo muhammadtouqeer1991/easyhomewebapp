@@ -17,7 +17,7 @@ export default function MeetingCTA() {
             </Col>
 
             <Col md={6} className="text-end">
-              <div className={styles.buttons}>
+              <div className={`${styles.buttons} readyflex`}>
                 <Button className={styles.primaryBtn}>Get your mortgage</Button>
 
                 <Button variant="light" className={styles.secondaryBtn}>

@@ -13,9 +13,9 @@ const Topbar = () => {
       <div className="Topbar primarybg p-2 py-lg-2 py-md-2 py-sm-2">
         <Container>
           <Row className="align-items-center">
-            <Col lg={6}>
+            <Col lg={6} xs={6}>
               <ul className="list-unstyled m-0 d-flex flex-wrap align-items-center gap-lg-2 gap-md-2 gap-sm-2 gap-2">
-                <li>
+                <li className="d-lg-flex d-none">
                   <Link
                     href="mailto:info@easyhomemortgage.com"
                     className="text-decoration-none black fs-8 text-white"
@@ -23,7 +23,7 @@ const Topbar = () => {
                     <MdEmail size={18} /> info@easyhomemortgage.com
                   </Link>
                 </li>
-                <li className="text-decoration-none black fs-8 d-flex align-items-center gap-lg-1 text-white border-start ps-lg-2 border-end pe-lg-2">
+                <li className="text-decoration-none black fs-8 d-lg-flex d-none align-items-center gap-lg-1 text-white border-start ps-lg-2 border-end pe-lg-2">
                   <SlCalender size={15} /> Mon - Fri 09:00 - 18:00
                 </li>
                 <li>
@@ -36,7 +36,7 @@ const Topbar = () => {
                 </li>
               </ul>
             </Col>
-            <Col lg={6}>
+            <Col lg={6} xs={6}>
               <ul className="list-unstyled m-0 d-flex flex-wrap align-items-center gap-lg-2 gap-md-2 gap-sm-2 gap-2 justify-content-end">
                 <li>
                   <Link

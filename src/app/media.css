@@ -1,0 +1,120 @@
+/* ===================================
+   📱 Extra Small Devices (0px – 480px)
+   Small Mobiles (iPhone SE etc)
+=================================== */
+@media (max-width: 480px) {
+  body {
+    /* background: orange; */
+  }
+  .Homeintro h1.fs-1 {
+    font-size: 2rem !important;
+  }
+  .Homeintro h5.fs-4 {
+    font-size: 1.3rem !important;
+  }
+  .fs-8 {
+    font-size: 12px;
+  }
+  .Homeintro ul li {
+    flex: auto;
+  }
+  .shape {
+    display: none;
+  }
+  .why-editorial h2 {
+    font-size: 1.5rem !important;
+  }
+  .lead {
+    color: #64748b;
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .steps {
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 25px;
+    display: flex;
+  }
+  .image-card img {
+    height: auto;
+    width: auto;
+  }
+  .readyflex {
+    gap: 7px !important;
+    display: flex;
+    flex-direction: column !important;
+    margin-top: 12px;
+  }
+  .service-tabs {
+    flex-direction: row;
+    gap: 10px;
+  }
+  .service-tabs .nav-item {
+    flex: 45%;
+  }
+  .tab-btn span {
+    font-size: 17px;
+  }
+  .content-box {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px 0;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+  }
+  .faq-item {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    background: #ffffffb3;
+    border: 1px solid #ffffff4d;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    padding: 15px 8px;
+    transition: all 0.3s;
+  }
+  .bg-shape {
+    width: 100% !important;
+  }
+}
+
+/* ===================================
+   📱 Mobile Devices (481px – 767px)
+   iPhone, Android Mobiles
+=================================== */
+@media (min-width: 481px) and (max-width: 767px) {
+  body {
+    background: blue;
+  }
+}
+
+/* ===================================
+   📲 Tablets Portrait (768px – 991px)
+=================================== */
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+/* ===================================
+   💻 Tablets Landscape / Small Laptop (992px – 1199px)
+=================================== */
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+/* ===================================
+   🖥️ Laptops / Desktops (1200px – 1399px)
+=================================== */
+@media (min-width: 1200px) and (max-width: 1399px) {
+}
+
+/* ===================================
+   🖥️ Large Screens (1400px – 1599px)
+=================================== */
+@media (min-width: 1400px) and (max-width: 1599px) {
+}
+
+/* ===================================
+   🖥️ Extra Large Screens (1600px+)
+=================================== */
+@media (min-width: 1600px) {
+}

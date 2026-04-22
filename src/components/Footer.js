@@ -30,7 +30,7 @@ export default function Footer() {
           </Col>
 
           {/* Quick Links */}
-          <Col md={2}>
+          <Col md={2} xs={6}>
             <h5 className="fw-bold">Quick Links</h5>
             <ul className="list-unstyled mt-3">
               <li>Home</li>
@@ -43,7 +43,7 @@ export default function Footer() {
           </Col>
 
           {/* Services */}
-          <Col md={3}>
+          <Col md={3} xs={6}>
             <h5 className="fw-bold">Services</h5>
             <ul className="list-unstyled mt-3">
               <li>Resident Mortgage</li>
