@@ -24,7 +24,7 @@
 
 .slideTrack {
   display: flex;
-  width: calc(200px * 8);
+  width: calc(250px * 8);
   animation: scroll 20s linear infinite;
 }
 

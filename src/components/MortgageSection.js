@@ -2,7 +2,14 @@
 import { Container, Row, Col, Badge } from "react-bootstrap";
 import styles from "./MortgageSection.module.css";
 
-const logos = ["/adib.png", "/cbod.png", "/hsbc.png", "/sc.png"];
+const logos = [
+  "/adib.png",
+  "/cbod.png",
+  "/hsbc.png",
+  "/sc.png",
+  "/mashreq-logo-en.svg",
+  "/cbd-logo.svg",
+];
 
 export default function MortgageSection() {
   return (
