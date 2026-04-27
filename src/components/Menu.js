@@ -14,8 +14,8 @@ const Menu = () => {
               <Image
                 src="brandLogo.svg"
                 alt="Logo"
-                width={120}
-                height={70}
+                width={230}
+                height={60}
                 priority
               />
             </Link>

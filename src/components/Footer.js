@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -11,12 +12,19 @@ export default function Footer() {
         <Row className="g-4">
           {/* Left Section */}
           <Col md={4}>
-            <h4 className="fw-bold">EASY HOME MORTGAGE</h4>
-            <small className="text-uppercase text-muted">
+            <Image
+              src="brandLogo.svg"
+              alt="Logo"
+              width={280}
+              height={90}
+              priority
+            />
+
+            <small className="text-uppercase text-muted d-block pt-2">
               You Deserve Premier Services
             </small>
 
-            <p className="mt-3">
+            <p className="mt-1">
               Easy Home Mortgage Brokers offers tailored mortgage solutions that
               simplify the journey from property search to ownership.
             </p>
