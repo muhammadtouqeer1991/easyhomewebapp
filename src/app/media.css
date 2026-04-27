@@ -84,9 +84,9 @@
    iPhone, Android Mobiles
 =================================== */
 @media (min-width: 481px) and (max-width: 767px) {
-  body {
+  /* body {
     background: blue;
-  }
+  } */
 }
 
 /* ===================================
