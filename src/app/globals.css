@@ -160,7 +160,7 @@ body {
 }
 
 /* FAQ Card */
-.faq-item {
+.faq-section .faq-item {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   border-radius: 15px;
@@ -171,13 +171,13 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.faq-item:hover {
+.faq-section .faq-item:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 /* Active state */
-.faq-item.active {
+.faq-section .faq-item.active {
   background: #ffffff;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
@@ -206,8 +206,12 @@ body {
   transition: all 0.3s ease;
 }
 
-.faq-item:hover .icon {
+.faq-section .faq-item:hover .icon {
   transform: rotate(90deg);
+}
+
+.faq-wrapper .faq-item {
+  padding-bottom: 20px;
 }
 
 /* Answer Animation */
