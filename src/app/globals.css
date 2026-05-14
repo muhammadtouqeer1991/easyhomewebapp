@@ -171,6 +171,10 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.faq-sectionss .faq-item {
+  margin-bottom: 20px;
+}
+
 .faq-section .faq-item:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
