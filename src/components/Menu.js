@@ -63,7 +63,9 @@ const Menu = () => {
                     Seller Buyout
                   </Link>
                 </NavDropdown>
-
+                <Link className="nav-link" href="/services">
+                  Services
+                </Link>
                 <Link className="nav-link" href="/about-us">
                   About Us
                 </Link>
