@@ -25,7 +25,7 @@ const Menu = () => {
                 <Link className="nav-link active" href="/">
                   Home
                 </Link>
-                <NavDropdown title="What We Offer" id="basic-nav-dropdown">
+                <NavDropdown title="Our Services" id="basic-nav-dropdown">
                   <Link className="dropdown-item" href="/residential-mortgages">
                     Residential Mortgages
                   </Link>
@@ -62,19 +62,16 @@ const Menu = () => {
                   <Link className="dropdown-item" href="/seller-buyout">
                     Seller Buyout
                   </Link>
+                  <Link className="dropdown-item" href="/services">
+                    Services
+                  </Link>
                 </NavDropdown>
-                <Link className="nav-link" href="/services">
-                  Services
+
+                <Link className="nav-link" href="#">
+                  Mortgage Calculator
                 </Link>
                 <Link className="nav-link" href="/about-us">
                   About Us
-                </Link>
-                <Link className="nav-link" href="/our-team">
-                  Our Team
-                </Link>
-
-                <Link className="nav-link" href="/property-investment">
-                  Property Investment
                 </Link>
                 <Link className="nav-link" href="/contact-us">
                   Contact Us

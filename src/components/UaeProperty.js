@@ -98,7 +98,7 @@ const UaeProperty = () => {
       {/* Why Windsor Section */}
       <Card
         style={{
-          background: "linear-gradient(135deg, #5fb43d, #628fca)",
+          background: "linear-gradient(135deg, #5fb43d, #074dab)",
           color: "#fff",
           borderRadius: "25px",
           padding: "40px 30px",
@@ -236,7 +236,7 @@ const UaeProperty = () => {
 
         <Col md={6} style={{ position: "relative" }}>
           <img
-            src="/newWebimg.webp"
+            src="/noncommercial.webp"
             alt="Happy Family"
             style={{
               width: "110%",

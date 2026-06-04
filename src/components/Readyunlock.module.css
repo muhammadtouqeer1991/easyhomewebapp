@@ -1,6 +1,6 @@
 :root {
   --primary: #5fb43d;
-  --secondary: #1855a5;
+  --secondary: #074dab;
   --dark: #000;
   --white: #fff;
 }
@@ -56,6 +56,6 @@
 
 /* OPTIONAL: Fake gradient using text-shadow fallback */
 .keyIcon {
-  color: #7b2ff7;
+  color: #074dab;
   opacity: 0.9;
 }

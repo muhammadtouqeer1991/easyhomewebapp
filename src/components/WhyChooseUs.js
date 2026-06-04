@@ -79,7 +79,7 @@ export default function WhyChooseUs() {
       <style jsx>{`
         :root {
           --primary: #5fb43d;
-          --secondary: #1855a5;
+          --secondary: #074dab;
         }
 
         .why-editorial {

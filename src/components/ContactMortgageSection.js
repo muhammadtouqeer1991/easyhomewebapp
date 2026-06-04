@@ -124,7 +124,7 @@ export default function ContactMortgageSection() {
         }
 
         .contact-form button {
-          background: #0b57d0;
+          background: #074dab;
           color: #fff;
           border: none;
           padding: 10px 28px;
@@ -135,7 +135,7 @@ export default function ContactMortgageSection() {
         }
 
         .contact-form button:hover {
-          background: #0847ad;
+          background: #074dab;
         }
 
         @media (max-width: 991px) {

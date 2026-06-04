@@ -167,7 +167,7 @@ export default function MortgageJourney() {
         }
 
         .step-left span {
-          color: #0057c8;
+          color: #074dab;
           font-size: 13px;
           font-weight: 700;
           position: relative;
@@ -222,7 +222,7 @@ export default function MortgageJourney() {
         .consult-btn {
           width: 100%;
           height: 42px;
-          background: #0057c8;
+          background: #074dab;
           border: none;
           border-radius: 3px;
           font-size: 12px;
@@ -232,7 +232,7 @@ export default function MortgageJourney() {
         }
 
         .consult-btn:hover {
-          background: #004ab0;
+          background: #074dab;
         }
 
         .secure-text {

@@ -123,14 +123,14 @@ export default function OurTeam() {
 
         .role {
           font-size: 13px;
-          color: #0d6efd;
+          color: #074dab;
           font-weight: 600;
         }
 
         .line {
           width: 30px;
           height: 2px;
-          background: #0d6efd;
+          background: #074dab;
           margin: 8px 0 12px;
         }
 
@@ -144,7 +144,7 @@ export default function OurTeam() {
         }
 
         svg {
-          color: #0d6efd;
+          color: #074dab;
         }
       `}</style>
     </section>

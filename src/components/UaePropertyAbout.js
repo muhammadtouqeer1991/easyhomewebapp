@@ -99,7 +99,7 @@ const UaePropertyAbout = () => {
       {/* Why Windsor Section */}
       <Card
         style={{
-          background: "linear-gradient(135deg, #5fb43d, #628fca)",
+          background: "linear-gradient(135deg, #5fb43d, #074dab)",
           color: "#fff",
           borderRadius: "25px",
           padding: "40px 30px",

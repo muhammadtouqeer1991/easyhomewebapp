@@ -4,21 +4,23 @@ import Readyunlock from "@/components/Readyunlock";
 import FAQSection from "@/components/FAQSection";
 import React from "react";
 import Oopmortgageinfo from "@/components/Oopmortgageinfo";
+import PremiumHeros from "@/components/PremiumHeros";
+import FaqSections from "@/components/FaqSections";
 
 const page = () => {
   return (
     <>
-      <PremiumHero
+      <PremiumHeros
         slug={`Oqood Resale Mortgage`}
         title={`Oqood Resale Mortgage Solutions`}
         desc={`At Windsor Premier Mortgage Brokers, we understand the unique financial profile of self-employed individuals in the UAE. Whether you own a business, operate as a freelancer, or are part of a partnership, our self-employed mortgage solutions are designed to provide flexible, competitive financing – even when traditional income documents may not apply.`}
-        btntext={`Request a Free Consultation`}
+        btntext={`Get Free Consultation`}
+        btntext2={`Check Eligibility`}
         img={`/newvector.webp`}
       />
       <MortgageSection />
       <Oopmortgageinfo />
-      <Readyunlock />
-      <FAQSection img={"/faqsecond.webp"} />
+      <FaqSections />
     </>
   );
 };

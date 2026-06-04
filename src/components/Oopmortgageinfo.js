@@ -76,7 +76,7 @@ const Oopmortgageinfo = () => {
             }}
           >
             <img
-              src="/finantialImg.webp"
+              src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200&auto=format&fit=crop"
               alt="Financial Planning"
               style={{
                 width: "100%",
@@ -121,7 +121,7 @@ const Oopmortgageinfo = () => {
                 }}
               >
                 <FaCheckCircle
-                  color="#60a5fa"
+                  color="#074dab"
                   style={{ marginRight: "10px" }}
                 />{" "}
                 {item}

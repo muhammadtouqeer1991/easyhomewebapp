@@ -4,21 +4,23 @@ import Readyunlock from "@/components/Readyunlock";
 import UaeProperty from "@/components/UaeProperty";
 import FAQSection from "@/components/FAQSection";
 import React from "react";
+import PremiumHeros from "@/components/PremiumHeros";
+import FaqSections from "@/components/FaqSections";
 
 const page = () => {
   return (
     <>
-      <PremiumHero
+      <PremiumHeros
         slug={`Non-Resident Mortgage`}
         title={`Non-Resident Mortgage in the UAE`}
         desc={`Invest in UAE Real Estate—From Anywhere in the World`}
-        btntext={`Request a Free Consultation`}
-        img={`/nonmortgage.webp`}
+        btntext={`Get Free Consultation`}
+        btntext2={`Check Eligibility`}
+        img={`/newvector.webp`}
       />
       <MortgageSection />
       <UaeProperty />
-      <Readyunlock />
-      <FAQSection img={"/faqsecond.webp"} />
+      <FaqSections />
     </>
   );
 };

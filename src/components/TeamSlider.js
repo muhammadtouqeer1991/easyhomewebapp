@@ -158,7 +158,7 @@ const TeamSlider = () => {
           margin: auto;
           border-radius: 50%;
           padding: 4px;
-          background: linear-gradient(135deg, #5fb43d, #1855a5);
+          background: linear-gradient(135deg, #5fb43d, #074dab);
         }
 
         .img-wrap img {

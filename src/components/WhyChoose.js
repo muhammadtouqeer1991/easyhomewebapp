@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { FaCheckCircle } from "react-icons/fa";
 import styles from "./WhyChoose.module.css";
 
-export default function WhyChoose() {
+export default function WhyChoose({ img }) {
   return (
     <section className={styles.section}>
       <Container>
@@ -47,11 +47,7 @@ export default function WhyChoose() {
           {/* RIGHT IMAGE */}
           <Col lg={6}>
             <div className={styles.imageWrapper}>
-              <img
-                src="/whychooseImg.webp"
-                alt="Mortgage"
-                className={styles.image}
-              />
+              <img src={img} alt="Mortgage" className={styles.image} />
 
               {/* Floating Card */}
               <div className={styles.floatingCard}>

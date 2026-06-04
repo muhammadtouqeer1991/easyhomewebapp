@@ -47,7 +47,7 @@ const CTASection = () => {
       <style jsx>{`
         .cta-strip {
           padding: 25px 0;
-          background: linear-gradient(135deg, #1855a5, #5fb43d);
+          background: linear-gradient(135deg, #074dab, #5fb43d);
           color: #fff;
           border-radius: 12px;
           margin: 40px 0;
@@ -91,7 +91,7 @@ const CTASection = () => {
         /* BUTTON */
         .cta-btn {
           background: #fff;
-          color: #1855a5;
+          color: #074dab;
           border: none;
           padding: 8px 18px;
           border-radius: 6px;

@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         <Topbar />
         <Menu />
         {children}
-        <MeetingCTA />
+        {/* <MeetingCTA /> */}
         <Footer />
       </body>
     </html>

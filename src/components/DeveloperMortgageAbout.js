@@ -189,7 +189,7 @@ export default function DeveloperMortgageAbout() {
         }
 
         .hero-content span {
-          color: #1855a5;
+          color: #074dab;
         }
 
         .cta {

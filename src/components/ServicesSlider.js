@@ -119,7 +119,7 @@ const ServicesSlider = () => {
       <style>{`
        :root {
           --primary: #5fb43d;
-          --secondary: #1855a5;
+          --secondary: #074dab;
         }
         .service-section {
           padding: 50px 0;
@@ -239,7 +239,7 @@ const ServicesSlider = () => {
         }
 
         .content-text a:hover {
-          color: #1855a5;
+          color: #074dab;
         }
       `}</style>
     </div>

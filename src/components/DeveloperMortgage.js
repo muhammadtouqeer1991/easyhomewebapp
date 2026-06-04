@@ -28,7 +28,10 @@ export default function DeveloperMortgage() {
       <Container>
         {/* HERO */}
         <div className="hero">
-          <img src="/developerBanner.webp" alt="hero" />
+          <img
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop"
+            alt="hero"
+          />
           <div className="hero-content">
             <h1>Buying Direct from Developers? We’ve Got You Covered</h1>
             <p>
@@ -154,7 +157,7 @@ export default function DeveloperMortgage() {
                   }}
                 >
                   <FaCheckCircle
-                    color="#60a5fa"
+                    color="#074dab"
                     style={{ marginRight: "10px" }}
                   />{" "}
                   {item}
@@ -272,7 +275,7 @@ export default function DeveloperMortgage() {
         }
 
         .hero-content span {
-          color: #1855a5;
+          color: #074dab;
         }
 
         .cta {

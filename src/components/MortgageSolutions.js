@@ -180,7 +180,7 @@ export default function MortgageSolutions() {
         }
 
         .card-footer-area {
-          background: #0057c8;
+          background: #074dab;
           padding: 13px 15px;
           text-align: center;
         }

@@ -213,7 +213,7 @@ const styles = {
   },
 
   activeTab: {
-    background: "#1855a5",
+    background: "#074dab",
     color: "#fff",
   },
 
@@ -243,7 +243,7 @@ const styles = {
     width: "100%",
     padding: "12px",
     borderRadius: "10px",
-    background: "#1855a5",
+    background: "#074dab",
     border: "none",
     fontWeight: "600",
   },
@@ -251,7 +251,7 @@ const styles = {
   /* RIGHT SIDE */
   infoPanel: {
     flex: 1,
-    background: "linear-gradient(135deg, #5fb43d, #628fca)",
+    background: "linear-gradient(135deg, #5fb43d, #074dab)",
     color: "#fff",
     display: "flex",
     alignItems: "center",

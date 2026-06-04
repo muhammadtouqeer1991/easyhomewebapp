@@ -57,7 +57,7 @@ export default function PropertyFinanceSection() {
                 <div className="bg-shape"></div>
 
                 <img
-                  src="/mortgagehover.webp"
+                  src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop"
                   alt="Property Key Handover"
                   className="img-fluid main-img"
                 />
@@ -88,7 +88,7 @@ export default function PropertyFinanceSection() {
           position: absolute;
           width: 80%;
           height: 80%;
-          background: linear-gradient(135deg, #0d6efd, #00b4d8);
+          background: linear-gradient(135deg, #074dab, #074dab);
           border-radius: 30px;
           top: -20px;
           left: -20px;
@@ -134,7 +134,7 @@ export default function PropertyFinanceSection() {
         .tag {
           display: inline-block;
           background: #e7f1ff;
-          color: #1855a5;
+          color: #074dab;
           padding: 6px 14px;
           border-radius: 20px;
           font-size: 13px;
@@ -182,7 +182,7 @@ export default function PropertyFinanceSection() {
           margin-top: 20px;
           padding: 12px 25px;
           border-radius: 30px;
-          background: linear-gradient(45deg, #0d6efd, #00b4d8);
+          background: linear-gradient(45deg, #074dab, #074dab);
           border: none;
           font-weight: 600;
           display: inline-flex;
