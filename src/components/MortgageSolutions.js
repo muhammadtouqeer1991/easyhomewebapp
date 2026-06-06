@@ -7,38 +7,32 @@ const mortgageData = [
   {
     id: 1,
     title: "Residential Mortgages",
-    image:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&auto=format&fit=crop",
+    image: "/mor01.webp",
   },
   {
     id: 2,
     title: "Non-Residential Mortgages",
-    image:
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200&auto=format&fit=crop",
+    image: "/mor02.webp",
   },
   {
     id: 3,
     title: "Self Employed Mortgage",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
+    image: "/mor03.webp",
   },
   {
     id: 4,
     title: "Developer-Based Mortgage",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop",
+    image: "/mor04.webp",
   },
   {
     id: 5,
     title: "Handover payment",
-    image:
-      "https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop",
+    image: "/mor05.webp",
   },
   {
     id: 6,
     title: "Qood Resale Mortgage",
-    image:
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200&auto=format&fit=crop",
+    image: "/mor06.webp",
   },
 ];
 

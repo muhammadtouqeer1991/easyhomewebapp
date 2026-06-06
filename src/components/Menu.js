@@ -47,12 +47,12 @@ const Menu = () => {
                   <Link className="dropdown-item" href="/handover-payment">
                     Handover Payment
                   </Link>
-                  <Link className="dropdown-item" href="/oqood-resale">
+                  {/* <Link className="dropdown-item" href="/oqood-resale">
                     Oqood Resale
                   </Link>
                   <Link className="dropdown-item" href="/first-time-buyers">
                     First-Time Buyer
-                  </Link>
+                  </Link> */}
                   <Link className="dropdown-item" href="/buyout-transaction">
                     Buyout Transaction
                   </Link>

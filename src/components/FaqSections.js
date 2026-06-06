@@ -50,7 +50,7 @@ export default function FaqSections() {
           </div>
 
           {/* Accordion */}
-          <Accordion defaultActiveKey="1" className="faq-accordion">
+          <Accordion className="faq-accordion">
             {faqs.map((faq, index) => (
               <Accordion.Item
                 eventKey={String(index)}

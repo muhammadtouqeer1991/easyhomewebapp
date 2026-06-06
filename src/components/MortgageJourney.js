@@ -52,7 +52,7 @@ export default function MortgageJourney() {
                     <div className="step-left">
                       <span>{item.step}</span>
 
-                      {index !== steps.length - 1 && (
+                      {index !== steps.length - 0 && (
                         <div className="line"></div>
                       )}
                     </div>
@@ -135,7 +135,7 @@ export default function MortgageJourney() {
         }
 
         .heading-wrapper h2 span {
-          color: #74bc4d;
+          color: #5fb43d;
         }
 
         .heading-wrapper p {
@@ -176,11 +176,11 @@ export default function MortgageJourney() {
 
         .line {
           position: absolute;
-          top: 24px;
+          top: -10px;
           right: -10px;
           width: 5px;
           height: 60px;
-          background: #59b045;
+          background: #5fb43d;
         }
 
         .step-right h4 {

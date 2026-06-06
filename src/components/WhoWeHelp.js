@@ -8,51 +8,51 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const cards = [
   {
     title: "First-Time Homebuyers",
-    image: "/help01.png",
+    image: "/help01.webp",
   },
   {
     title: "UAE Expats",
-    image: "/help02.png",
+    image: "/help02.webp",
   },
   {
     title: "Property Investors",
-    image: "/help03.png",
+    image: "/help03.webp",
   },
   {
     title: "Business Owners",
-    image: "/help04.png",
+    image: "/help04.webp",
   },
   {
     title: "Commercial Property Buyers",
-    image: "/help05.png",
+    image: "/help05.webp",
   },
   {
     title: "Self-Employed Professionals",
-    image: "/help06.png",
+    image: "/help06.webp",
   },
   {
     title: "Business Owners",
-    image: "/help01.png",
+    image: "/help01.webp",
   },
   {
     title: "Commercial Property Buyers",
-    image: "/help02.png",
+    image: "/help02.webp",
   },
   {
     title: "Self-Employed Professionals",
-    image: "/help03.png",
+    image: "/help03.webp",
   },
   {
     title: "Business Owners",
-    image: "/help04.png",
+    image: "/help04.webp",
   },
   {
     title: "Commercial Property Buyers",
-    image: "/help05.png",
+    image: "/help05.webp",
   },
   {
     title: "Self-Employed Professionals",
-    image: "/help06.png",
+    image: "/help06.webp",
   },
 ];
 
