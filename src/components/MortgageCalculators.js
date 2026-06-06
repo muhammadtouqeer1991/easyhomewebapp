@@ -1,14 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { FaCircle } from "react-icons/fa";
+import { Container, Row, Col, Form } from "react-bootstrap";
 
 export default function MortgageCalculators() {
   const [residentType, setResidentType] = useState("resident");
   const [propertyPrice, setPropertyPrice] = useState(1000000);
   const [downPayment, setDownPayment] = useState(200000);
   const [years, setYears] = useState(20);
+  const [interestRate, setInterestRate] = useState(3.99);
 
   const [loanAmount, setLoanAmount] = useState(800000);
   const [monthlyPayment, setMonthlyPayment] = useState(4218);
@@ -19,18 +19,18 @@ export default function MortgageCalculators() {
 
   useEffect(() => {
     calculateMortgage();
-  }, [propertyPrice, downPayment, years, residentType]);
+  }, [propertyPrice, downPayment, years, interestRate, residentType]);
+
+  // When resident type changes, reset interest rate to default
+  useEffect(() => {
+    setInterestRate(residentType === "resident" ? residentRate : nationalRate);
+  }, [residentType]);
 
   const calculateMortgage = () => {
     const principal = propertyPrice - downPayment;
-
     setLoanAmount(principal);
 
-    const annualRate =
-      residentType === "resident" ? residentRate : nationalRate;
-
-    const monthlyRate = annualRate / 100 / 12;
-
+    const monthlyRate = interestRate / 100 / 12;
     const totalMonths = years * 12;
 
     const emi =
@@ -54,7 +54,6 @@ export default function MortgageCalculators() {
                 <h2>
                   Calculate Your <span>Mortgage</span> in Seconds
                 </h2>
-
                 <p>
                   Estimate your monthly payments and understand your
                   affordability before applying.
@@ -64,11 +63,10 @@ export default function MortgageCalculators() {
           </Row>
         </Container>
       </div>
+
       <div className="mortgage-section">
         <Container>
           <div className="calculator-card">
-            {/* HEADING */}
-
             <Row className="gx-0">
               {/* LEFT SIDE */}
               <Col lg={6}>
@@ -76,7 +74,6 @@ export default function MortgageCalculators() {
                   {/* RESIDENT STATUS */}
                   <div className="field-box">
                     <label>Residency Status</label>
-
                     <div className="status-wrapper">
                       <button
                         className={
@@ -88,7 +85,6 @@ export default function MortgageCalculators() {
                       >
                         UAE Resident
                       </button>
-
                       <button
                         className={
                           residentType === "national"
@@ -105,7 +101,6 @@ export default function MortgageCalculators() {
                   {/* PROPERTY PRICE */}
                   <div className="field-box">
                     <label>Property Price</label>
-
                     <div className="input-wrapper">
                       <Form.Control
                         type="number"
@@ -115,7 +110,6 @@ export default function MortgageCalculators() {
                         }
                         className="custom-input"
                       />
-
                       <span className="aed">AED</span>
                     </div>
                   </div>
@@ -123,7 +117,6 @@ export default function MortgageCalculators() {
                   {/* DOWN PAYMENT */}
                   <div className="field-box">
                     <label>Down Payment</label>
-
                     <div className="input-wrapper">
                       <Form.Control
                         type="number"
@@ -131,28 +124,64 @@ export default function MortgageCalculators() {
                         onChange={(e) => setDownPayment(Number(e.target.value))}
                         className="custom-input"
                       />
-
                       <span className="aed">AED</span>
+                    </div>
+                  </div>
+
+                  {/* INTEREST RATE */}
+                  <div className="field-box">
+                    <label>Interest Rate</label>
+                    <div className="slider-box">
+                      <div
+                        className="input-wrapper"
+                        style={{ marginBottom: "0px" }}
+                      >
+                        <Form.Control
+                          type="number"
+                          value={interestRate}
+                          step="0.01"
+                          min="1"
+                          max="15"
+                          onChange={(e) => {
+                            const val = Number(e.target.value);
+                            if (val >= 1 && val <= 15) setInterestRate(val);
+                          }}
+                          className="custom-input"
+                        />
+                        <span className="aed">%</span>
+                      </div>
+                      <input
+                        type="range"
+                        min="1"
+                        max="15"
+                        step="0.01"
+                        value={interestRate}
+                        onChange={(e) =>
+                          setInterestRate(Number(e.target.value))
+                        }
+                        className="range-slider"
+                      />
+                      <div className="range-footer">
+                        <span>1%</span>
+                        <span>15%</span>
+                      </div>
                     </div>
                   </div>
 
                   {/* LOAN DURATION */}
                   <div className="field-box">
                     <label>Loan Duration</label>
-
                     <div className="slider-box">
                       <input
                         type="range"
                         min="1"
-                        max="30"
+                        max="25"
                         value={years}
                         onChange={(e) => setYears(Number(e.target.value))}
                         className="range-slider"
                       />
-
                       <div className="range-footer">
                         <span>0 Month</span>
-
                         <span>{years} Year</span>
                       </div>
                     </div>
@@ -166,7 +195,6 @@ export default function MortgageCalculators() {
                   <div className="result-box">
                     <div className="result-item">
                       <p>Loan Amount</p>
-
                       <h1>
                         {formatNumber(loanAmount)} <span>AED</span>
                       </h1>
@@ -174,7 +202,6 @@ export default function MortgageCalculators() {
 
                     <div className="result-item second">
                       <p>Monthly Cost</p>
-
                       <h1>
                         {formatNumber(monthlyPayment)} <span>AED</span>
                       </h1>
@@ -185,7 +212,6 @@ export default function MortgageCalculators() {
                         This calculation is based off of live products in our
                         database
                       </small>
-
                       <button className="cta">
                         Speak With a Mortgage Expert
                       </button>
@@ -199,7 +225,6 @@ export default function MortgageCalculators() {
       </div>
 
       <style jsx>{`
-        /* CTA */
         .cta {
           margin-top: 30px;
           background: var(--secondary);
@@ -222,35 +247,28 @@ export default function MortgageCalculators() {
           padding: 60px 0;
           padding-top: 20px;
         }
-
         .calculator-card {
           background: #efefef;
           border-radius: 10px;
           padding: 40px;
         }
-
         .top-content h2 {
           font-size: 38px;
           font-weight: 700;
           margin-bottom: 8px;
           color: #111;
         }
-
         .top-content h2 span {
           color: #69b64a;
         }
-
         .top-content p {
           color: #666;
           font-size: 15px;
-          //   margin-bottom: 35px;
         }
-
         .left-side {
           padding-right: 40px;
           border-right: 1px solid #d7d7d7;
         }
-
         .right-side {
           padding-left: 40px;
           height: 100%;
@@ -258,11 +276,9 @@ export default function MortgageCalculators() {
           align-items: center;
           justify-content: center;
         }
-
         .field-box {
-          margin-bottom: 28px;
+          margin-bottom: 10px;
         }
-
         .field-box label {
           display: block;
           margin-bottom: 10px;
@@ -270,12 +286,10 @@ export default function MortgageCalculators() {
           font-weight: 600;
           color: #222;
         }
-
         .status-wrapper {
           display: flex;
           gap: 10px;
         }
-
         .status-btn {
           border: none;
           background: #fff;
@@ -285,18 +299,15 @@ export default function MortgageCalculators() {
           color: #555;
           transition: 0.3s;
         }
-
         .status-btn.active {
           background: #ffffff;
           font-weight: 600;
           color: #111;
           box-shadow: 0 0 0 1px #ddd;
         }
-
         .input-wrapper {
           position: relative;
         }
-
         .custom-input {
           height: 52px;
           border-radius: 8px;
@@ -306,13 +317,11 @@ export default function MortgageCalculators() {
           padding-right: 70px;
           font-size: 15px;
         }
-
         .custom-input::-webkit-outer-spin-button,
         .custom-input::-webkit-inner-spin-button {
           -webkit-appearance: none;
           margin: 0;
         }
-
         .aed {
           position: absolute;
           right: 18px;
@@ -322,13 +331,11 @@ export default function MortgageCalculators() {
           font-size: 12px;
           font-weight: 600;
         }
-
         .slider-box {
           background: #fff;
           padding: 18px 16px 10px;
           border-radius: 8px;
         }
-
         .range-slider {
           width: 100%;
           appearance: none;
@@ -337,7 +344,6 @@ export default function MortgageCalculators() {
           border-radius: 20px;
           outline: none;
         }
-
         .range-slider::-webkit-slider-thumb {
           appearance: none;
           width: 12px;
@@ -346,63 +352,49 @@ export default function MortgageCalculators() {
           border-radius: 50%;
           cursor: pointer;
         }
-
         .range-footer {
           display: flex;
           justify-content: space-between;
           margin-top: 10px;
         }
-
         .range-footer span {
           font-size: 12px;
           color: #999;
         }
-
         .result-box {
           width: 100%;
           text-align: center;
         }
-
         .result-item {
           margin-bottom: 45px;
           text-align: end;
         }
-
         .result-item.second {
           margin-bottom: 25px;
         }
-
         .result-item p {
           font-size: 15px;
           color: #222;
           margin-bottom: 10px;
         }
-
         .result-item h1 {
           font-size: 54px;
           font-weight: 700;
           color: #000;
           line-height: 1;
         }
-
         .result-item h1 span {
           font-size: 28px;
           font-weight: 500;
         }
-
         .bottom-area {
           text-align: end;
         }
-
         .bottom-area small {
           color: #000;
           font-size: 17px;
           display: block;
           margin-bottom: 0px;
-        }
-
-        .expert-btn:hover {
-          background: #074dab;
         }
 
         @media (max-width: 991px) {
@@ -411,15 +403,12 @@ export default function MortgageCalculators() {
             padding-right: 0;
             margin-bottom: 40px;
           }
-
           .right-side {
             padding-left: 0;
           }
-
           .top-content h2 {
             font-size: 28px;
           }
-
           .result-item h1 {
             font-size: 40px;
           }
@@ -429,19 +418,15 @@ export default function MortgageCalculators() {
           .calculator-card {
             padding: 25px;
           }
-
           .top-content h2 {
             font-size: 24px;
           }
-
           .result-item h1 {
             font-size: 32px;
           }
-
           .result-item h1 span {
             font-size: 18px;
           }
-
           .status-wrapper {
             flex-direction: column;
           }
