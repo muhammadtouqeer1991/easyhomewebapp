@@ -96,6 +96,7 @@ const UaeProperty = () => {
       </Row>
 
       {/* Why Windsor Section */}
+      {/* Why Windsor Section */}
       <Card
         style={{
           background: "linear-gradient(135deg, #5fb43d, #074dab)",
@@ -118,53 +119,77 @@ const UaeProperty = () => {
         >
           Why Choose Easy Home Premier?
         </Card.Title>
+
         <ul
           className="cardpremier"
           style={{
             listStyle: "none",
             padding: 0,
-            lineHeight: "2.2",
+            margin: 0,
             fontSize: "16px",
+            display: "flex",
+            flexWrap: "wrap", // 👈 enable grid wrap
+            justifyContent: "center",
+            gap: "20px",
           }}
         >
           <li
             style={{
               display: "flex",
               alignItems: "center",
-              marginBottom: "15px",
+              gap: "12px",
+              width: "45%", // 👈 2 items per row
+              background: "rgba(255,255,255,0.08)",
+              padding: "12px 15px",
+              borderRadius: "10px",
             }}
           >
-            <FaHome size={22} style={{ marginRight: "12px", color: "#fff" }} />
+            <FaHome size={22} />
             Access to Leading UAE Banks with Non-Resident Products
           </li>
+
           <li
             style={{
               display: "flex",
               alignItems: "center",
-              marginBottom: "15px",
+              gap: "12px",
+              width: "45%",
+              background: "rgba(255,255,255,0.08)",
+              padding: "12px 15px",
+              borderRadius: "10px",
             }}
           >
-            <FaGlobe size={22} style={{ marginRight: "12px", color: "#fff" }} />
+            <FaGlobe size={22} />
             Exclusive Mortgage Offers for Overseas Investors
           </li>
+
           <li
             style={{
               display: "flex",
               alignItems: "center",
-              marginBottom: "15px",
+              gap: "12px",
+              width: "45%",
+              background: "rgba(255,255,255,0.08)",
+              padding: "12px 15px",
+              borderRadius: "10px",
             }}
           >
-            <FaLaptopCode
-              size={22}
-              style={{ marginRight: "12px", color: "#fff" }}
-            />
+            <FaLaptopCode size={22} />
             Remote Processing of mortgage with Digital Support
           </li>
-          <li style={{ display: "flex", alignItems: "center" }}>
-            <FaUserTie
-              size={22}
-              style={{ marginRight: "12px", color: "#fff" }}
-            />
+
+          <li
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "12px",
+              width: "45%",
+              background: "rgba(255,255,255,0.08)",
+              padding: "12px 15px",
+              borderRadius: "10px",
+            }}
+          >
+            <FaUserTie size={22} />
             Dedicated Relationship Manager Throughout
           </li>
         </ul>

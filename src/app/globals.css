@@ -173,8 +173,8 @@ body {
 
 .faq-sectionss .faq-item {
   margin-bottom: 20px;
+  border: none;
 }
-
 .faq-section .faq-item:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
@@ -349,7 +349,7 @@ footer svg:hover {
 }
 .cardpremier li {
   flex: 40%;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 0;
   padding: 0;
 }
@@ -357,6 +357,7 @@ footer svg:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  text-align: center;
 }
 .why-windsor-card:hover {
   transform: translateY(-5px);
@@ -383,4 +384,36 @@ footer svg:hover {
 .service-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.transition-navbar {
+  transition: all 0.3s ease;
+}
+
+/* sticky only on scroll */
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* active link */
+.active-link {
+  color: #5fb43d !important;
+  font-weight: 600;
+  border-bottom: 2px solid #5fb43d;
 }
