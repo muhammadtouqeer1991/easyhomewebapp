@@ -6,6 +6,7 @@ import FAQSection from "@/components/FAQSection";
 import React from "react";
 import FaqSections from "@/components/FaqSections";
 import PremiumHeros from "@/components/PremiumHeros";
+import Sellerbuyutinfo from "@/components/Sellerbuyutinfo";
 
 const page = () => {
   return (
@@ -20,7 +21,7 @@ const page = () => {
       />
 
       <MortgageSection />
-      <MortgageInfo />
+      <Sellerbuyutinfo />
       <FaqSections />
     </>
   );

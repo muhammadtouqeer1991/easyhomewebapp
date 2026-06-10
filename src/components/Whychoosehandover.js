@@ -5,6 +5,21 @@ import { FaCheckCircle } from "react-icons/fa";
 import styles from "./WhyChoose.module.css";
 
 export default function Whychoosehandover() {
+  const keyFeatures = [
+    "Up to 80% financing for property purchases",
+    "Low-doc mortgage options tailored to your business model",
+    "Flexible eligibility even without salary slips or fixed monthly income",
+    "Competitive interest rates and exclusive lender tie-ups",
+    "Fast-track approvals with Windsor’s assisted documentation process",
+  ];
+
+  const whyeasyhome = [
+    "Fast coordination with developers and banks",
+    "Expert advice on eligible lenders for handover stage",
+    "Complete process management from approval to disbursal",
+    "Dedicated mortgage specialist to guide you",
+  ];
+
   return (
     <section className={styles.section}>
       <Container>
@@ -74,6 +89,67 @@ export default function Whychoosehandover() {
             </div>
           </Col>
           <Col lg={12}></Col>
+        </Row>
+
+        <Row className="align-items-center mb-5">
+          <Col md={6}>
+            <h3
+              style={{
+                fontWeight: "700",
+                marginBottom: "20px",
+                color: "#1f2937",
+              }}
+            >
+              Key Features:
+            </h3>
+            <ul style={{ listStyle: "none", padding: 0, lineHeight: "2" }}>
+              {keyFeatures.map((item, idx) => (
+                <li
+                  key={idx}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    marginBottom: "12px",
+                  }}
+                >
+                  <FaCheckCircle
+                    color="#4ade80"
+                    style={{ marginRight: "10px" }}
+                  />{" "}
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Col>
+          <Col md={6}>
+            <h3
+              style={{
+                fontWeight: "700",
+                marginBottom: "20px",
+                color: "#1f2937",
+              }}
+            >
+              Why Easy Home Mortgage?
+            </h3>
+            <ul style={{ listStyle: "none", padding: 0, lineHeight: "2" }}>
+              {whyeasyhome.map((item, idx) => (
+                <li
+                  key={idx}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    marginBottom: "12px",
+                  }}
+                >
+                  <FaCheckCircle
+                    color="#4ade80"
+                    style={{ marginRight: "10px" }}
+                  />{" "}
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Col>
         </Row>
       </Container>
     </section>

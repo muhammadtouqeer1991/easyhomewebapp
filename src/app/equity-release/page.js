@@ -6,6 +6,7 @@ import FAQSection from "@/components/FAQSection";
 import React from "react";
 import PremiumHeros from "@/components/PremiumHeros";
 import FaqSections from "@/components/FaqSections";
+import Equalityreleaseinfo from "@/components/Equalityreleaseinfo";
 
 const page = () => {
   return (
@@ -19,7 +20,7 @@ const page = () => {
         img={`/newvector.webp`}
       />
       <MortgageSection />
-      <MortgageInfo />
+      <Equalityreleaseinfo />
       <FaqSections />
     </>
   );

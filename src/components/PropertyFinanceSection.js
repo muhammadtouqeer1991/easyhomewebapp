@@ -9,11 +9,22 @@ export default function PropertyFinanceSection() {
       <section className="finance-section">
         <Container>
           <Row className="align-items-center">
-            {/* Content FIRST (desktop reverse feel) */}
-            <Col lg={6} className="order-lg-1 order-2">
-              <div className="content-card">
-                <span className="tag">Final Payment Support</span>
+            {/* Image Side */}
+            <Col lg={6} className="order-lg-1 order-1 mb-4 mb-lg-0">
+              <div className="image-wrapper">
+                <div className="bg-shape"></div>
 
+                <img
+                  src="/handovermorPic.webp"
+                  alt="Property Key Handover"
+                  className="img-fluid main-img"
+                />
+              </div>
+            </Col>
+
+            {/* Content FIRST (desktop reverse feel) */}
+            <Col lg={6} className="order-lg-2 order-2">
+              <div className="content-card">
                 <h2>
                   Near Property Completion?
                   <br />
@@ -26,45 +37,15 @@ export default function PropertyFinanceSection() {
                   Mortgage Brokers offers fast, reliable mortgage solutions
                   designed specifically for handover payment financing.
                 </p>
-
-                <div className="features">
-                  <div>
-                    <FaHome /> Developer Coordination
-                  </div>
-                  <div>
-                    <FaUniversity /> Bank Processing Support
-                  </div>
-                  <div>
-                    <FaCheckCircle /> Fast Disbursal
-                  </div>
-                </div>
-
-                <p className="last-text">
+                <p>
                   We coordinate with your developer and bank to ensure a smooth
-                  disbursal — so you can complete your purchase and take
+                  disbursal—so you can complete your purchase and take
                   possession on time.
                 </p>
 
                 <Button className="custom-btn">
                   Get Financing Help <FaKey className="ms-2" />
                 </Button>
-              </div>
-            </Col>
-
-            {/* Image Side */}
-            <Col lg={6} className="order-lg-2 order-1 mb-4 mb-lg-0">
-              <div className="image-wrapper">
-                <div className="bg-shape"></div>
-
-                <img
-                  src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop"
-                  alt="Property Key Handover"
-                  className="img-fluid main-img"
-                />
-
-                <div className="floating-badge">
-                  <FaKey /> Handover Ready
-                </div>
               </div>
             </Col>
           </Row>

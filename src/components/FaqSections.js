@@ -2,11 +2,12 @@
 
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
-import { FiChevronDown } from "react-icons/fi";
+import { FiChevronDown, FiChevronsDown } from "react-icons/fi";
 
 export default function FaqSections() {
+  const [activeKey, setActiveKey] = useState(null);
   const faqs = [
     {
       question: "How much mortgage can I get in Dubai?",
@@ -50,14 +51,30 @@ export default function FaqSections() {
           </div>
 
           {/* Accordion */}
-          <Accordion className="faq-accordion">
+          <Accordion
+            className="faq-accordion"
+            activeKey={activeKey}
+            onSelect={(eventKey) =>
+              setActiveKey(activeKey === eventKey ? null : eventKey)
+            }
+          >
             {faqs.map((faq, index) => (
               <Accordion.Item
                 eventKey={String(index)}
                 key={index}
                 className="faq-item"
               >
-                <Accordion.Header>{faq.question}</Accordion.Header>
+                <Accordion.Header>
+                  <div className="faq-title">
+                    <span>{faq.question}</span>
+
+                    <FiChevronDown
+                      className={`faq-arrow ${
+                        activeKey === String(index) ? "rotate" : ""
+                      }`}
+                    />
+                  </div>
+                </Accordion.Header>
 
                 <Accordion.Body>
                   <div className="answer-box">{faq.answer}</div>
@@ -144,20 +161,20 @@ export default function FaqSections() {
           position: relative;
         }
 
-        :global(.accordion-button::before) {
-          content: "⌄";
-          position: absolute;
-          right: 24px;
-          top: 50%;
-          transform: translateY(-50%);
-          font-size: 34px;
-          color: #111;
-          transition: 0.3s ease;
-        }
+        // :global(.accordion-button::before) {
+        //   content: "⌄";
+        //   position: absolute;
+        //   right: 24px;
+        //   top: 50%;
+        //   transform: translateY(-50%);
+        //   font-size: 34px;
+        //   color: #111;
+        //   transition: 0.3s ease;
+        // }
 
-        :global(.accordion-button:not(.collapsed)::before) {
-          transform: translateY(-50%) rotate(180deg);
-        }
+        // :global(.accordion-button:not(.collapsed)::before) {
+        //   transform: translateY(-50%) rotate(180deg);
+        // }
 
         /* Body */
         :global(.accordion-body) {
