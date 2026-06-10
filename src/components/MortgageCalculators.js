@@ -46,7 +46,7 @@ export default function MortgageCalculators() {
 
   return (
     <>
-      <div className="mortgage-section2">
+      <div className="mortgage-section2" id="calculator">
         <Container>
           <Row>
             <Col lg={12}>

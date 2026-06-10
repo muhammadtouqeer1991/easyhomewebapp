@@ -123,7 +123,7 @@ const Menu = () => {
 
               <Link
                 className={`nav-link ${isActive("/mortgage-calculator") ? "active-link" : ""}`}
-                href="#"
+                href="/#calculator"
               >
                 Mortgage Calculator
               </Link>
