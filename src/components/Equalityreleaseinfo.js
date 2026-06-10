@@ -60,7 +60,7 @@ const Equalityreleaseinfo = () => {
             }}
           >
             <img
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
+              src="/equalityBgimg.webp"
               alt="Financial Planning"
               style={{
                 width: "100%",
