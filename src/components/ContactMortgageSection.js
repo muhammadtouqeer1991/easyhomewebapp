@@ -1,9 +1,60 @@
 // components/ContactEasyHome.jsx
 "use client";
-
+import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 
 export default function ContactMortgageSection() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert("Message Sent Successfully");
+
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        alert(data.message);
+      }
+    } catch (error) {
+      alert("Something went wrong");
+    }
+
+    setLoading(false);
+  };
+
   const features = [
     {
       title: "Expert Mortgage Advisors",
@@ -49,15 +100,46 @@ export default function ContactMortgageSection() {
 
             {/* RIGHT SIDE */}
             <div className="col-lg-7">
-              <form className="contact-form">
-                <input type="text" placeholder="Your Name" />
-                <input type="email" placeholder="Your Email Id" />
-                <input type="text" placeholder="Phone" />
+              <form className="contact-form" onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
 
-                <textarea rows="5" placeholder="Message"></textarea>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email Id"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+
+                <input
+                  type="text"
+                  name="phone"
+                  placeholder="Phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
+
+                <textarea
+                  rows="5"
+                  name="message"
+                  placeholder="Message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                ></textarea>
 
                 <div className="text-end">
-                  <button type="submit">Send</button>
+                  <button type="submit" disabled={loading}>
+                    {loading ? "Sending..." : "Send"}
+                  </button>
                 </div>
               </form>
             </div>

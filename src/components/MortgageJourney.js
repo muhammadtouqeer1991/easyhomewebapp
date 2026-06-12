@@ -1,8 +1,62 @@
 "use client";
-
+import { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 export default function MortgageJourney() {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    phone: "",
+    monthlyIncome: "",
+    propertyBudget: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/consultant", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "consultation",
+          ...formData,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert("Request submitted successfully");
+
+        setFormData({
+          fullName: "",
+          phone: "",
+          monthlyIncome: "",
+          propertyBudget: "",
+        });
+      } else {
+        alert(data.message);
+      }
+    } catch (error) {
+      alert("Something went wrong");
+    }
+
+    setLoading(false);
+  };
+
   const steps = [
     {
       step: "Step 1",
@@ -70,40 +124,60 @@ export default function MortgageJourney() {
             {/* RIGHT FORM */}
             <Col lg={6}>
               <div className="form-wrapper">
-                <Form>
+                <Form onSubmit={handleSubmit}>
                   <Form.Group className="mb-3">
                     <input
                       type="text"
+                      name="fullName"
                       placeholder="Full Name"
                       className="input-field form-control"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      required
                     />
                   </Form.Group>
 
                   <Form.Group className="mb-3">
                     <input
                       type="text"
+                      name="phone"
                       placeholder="Phone"
                       className="input-field form-control"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
                     />
                   </Form.Group>
 
                   <Form.Group className="mb-3">
                     <input
                       type="text"
+                      name="monthlyIncome"
                       placeholder="Monthly Income"
                       className="input-field form-control"
+                      value={formData.monthlyIncome}
+                      onChange={handleChange}
                     />
                   </Form.Group>
 
                   <Form.Group className="mb-4">
                     <input
                       type="text"
+                      name="propertyBudget"
                       placeholder="Property Budget"
                       className="input-field form-control"
+                      value={formData.propertyBudget}
+                      onChange={handleChange}
                     />
                   </Form.Group>
 
-                  <button className="consult-btn">Get Free Consultation</button>
+                  <button
+                    type="submit"
+                    className="consult-btn"
+                    disabled={loading}
+                  >
+                    {loading ? "Submitting..." : "Get Free Consultation"}
+                  </button>
 
                   <div className="secure-text">
                     Your information is secure & confidential
