@@ -5,7 +5,6 @@ import "./media.css";
 import Topbar from "@/components/Topbar";
 import Menu from "@/components/Menu";
 import Footer from "@/components/Footer";
-import MeetingCTA from "@/components/MeetingCTA";
 
 const montserratSans = Montserrat({
   variable: "--font-montserrat-sans",

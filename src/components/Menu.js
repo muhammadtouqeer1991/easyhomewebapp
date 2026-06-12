@@ -3,28 +3,71 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { usePathname } from "next/navigation";
+import { Container, Dropdown, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { usePathname, useRouter } from "next/navigation";
 
 const Menu = () => {
   const pathname = usePathname();
+  const router = useRouter();
+
   const [sticky, setSticky] = useState(false);
+  const [user, setUser] = useState(null);
 
   const isActive = (path) => pathname === path;
 
-  // 👇 Scroll listener for sticky behavior
+  // =========================
+  // SCROLL STICKY
+  // =========================
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 80) {
-        setSticky(true);
-      } else {
-        setSticky(false);
-      }
+      setSticky(window.scrollY > 80);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // =========================
+  // LOAD USER INITIALLY
+  // =========================
+  const loadUser = () => {
+    const token = localStorage.getItem("token");
+    const storedUser = localStorage.getItem("user");
+
+    if (token && storedUser) {
+      setUser(JSON.parse(storedUser));
+    } else {
+      setUser(null);
+    }
+  };
+
+  useEffect(() => {
+    loadUser();
+
+    const handleAuthChange = () => {
+      loadUser();
+    };
+
+    window.addEventListener("authChange", handleAuthChange);
+
+    return () => {
+      window.removeEventListener("authChange", handleAuthChange);
+    };
+  }, []);
+
+  // =========================
+  // LOGOUT
+  // =========================
+  const logout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+
+    setUser(null); // 🔥 instant UI update
+
+    window.dispatchEvent(new Event("authChange"));
+
+    router.push("/affiliate");
+  };
 
   return (
     <div className="Menu py-lg-2 py-md-2 py-sm-2 py-2">
@@ -35,7 +78,7 @@ const Menu = () => {
         <Container>
           <Link className="nav-brand" href="/">
             <Image
-              src="brandLogo.svg"
+              src="/brandLogo.svg"
               alt="Logo"
               width={230}
               height={60}
@@ -144,12 +187,43 @@ const Menu = () => {
             </Nav>
 
             <Nav className="ms-auto">
-              <Link
-                className="nav-link secondarybg px-lg-4 px-md-4 px-sm-4 px-3 text-white rounded"
-                href="/affiliate"
-              >
-                Broker Affiliate
-              </Link>
+              {user ? (
+                // ✅ LOGGED IN DROPDOWN
+                <Dropdown align="end">
+                  <Dropdown.Toggle
+                    variant="success"
+                    className="px-3 text-white"
+                  >
+                    {user.full_name}
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item
+                      onClick={() => router.push("/affiliate/dashboard")}
+                    >
+                      Dashboard
+                    </Dropdown.Item>
+
+                    <Dropdown.Item
+                      onClick={() => router.push("/affiliate/add-client")}
+                    >
+                      Add Client
+                    </Dropdown.Item>
+
+                    <Dropdown.Divider />
+
+                    <Dropdown.Item onClick={logout}>Logout</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              ) : (
+                // ❌ NOT LOGGED IN
+                <Link
+                  className="nav-link secondarybg px-4 text-white rounded"
+                  href="/affiliate"
+                >
+                  Broker Affiliate
+                </Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

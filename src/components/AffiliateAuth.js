@@ -10,23 +10,120 @@ import {
   FaEyeSlash,
 } from "react-icons/fa";
 
+import { useRouter } from "next/navigation";
+
 const AffiliateAuth = () => {
   const [activeTab, setActiveTab] = useState("register");
   const [showPass, setShowPass] = useState(false);
   const [showConfirmPass, setShowConfirmPass] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [formData, setFormData] = useState({
+    full_name: "",
+    phone: "",
+    email: "",
+    password: "",
+    confirm_password: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (formData.password !== formData.confirm_password) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        "https://easyhomeapi.pakrealestatecrm.com/api/register.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        },
+      );
+
+      const result = await response.json();
+
+      if (result.status) {
+        // console.log("RESULT:", result);
+        document.cookie = `token=${result.token}; path=/;`;
+        localStorage.setItem("token", result.token);
+        localStorage.setItem("user", JSON.stringify(result));
+
+        window.dispatchEvent(new Event("authChange"));
+
+        router.push("/affiliate/dashboard");
+      } else {
+        alert(result.message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const res = await fetch(
+        "https://easyhomeapi.pakrealestatecrm.com/api/login.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        },
+      );
+
+      const result = await res.json();
+
+      if (result.status) {
+        document.cookie = `token=${result.token}; path=/;`;
+        localStorage.setItem("token", result.token);
+        localStorage.setItem("user", JSON.stringify(result.user));
+
+        window.dispatchEvent(new Event("authChange"));
+
+        router.push("/affiliate/dashboard");
+      } else {
+        alert(result.message);
+      }
+    } catch (error) {
+      console.log(error);
+      alert("Something went wrong");
+    }
+
+    setLoading(false);
+  };
 
   return (
     <div style={styles.page}>
       <div style={styles.container}>
-        {/* ================= LEFT AUTH PANEL ================= */}
         <div style={styles.authPanel}>
-          {/* Header */}
           <div style={styles.header}>
             <h2 style={styles.title}>Affiliate Partner Portal</h2>
             <p style={styles.subtitle}>Earn commissions by referring clients</p>
           </div>
 
-          {/* Tabs */}
           <div style={styles.tabs}>
             <div
               style={{
@@ -53,43 +150,84 @@ const AffiliateAuth = () => {
           <div style={styles.formBox}>
             {activeTab === "login" ? (
               <>
-                <Form>
+                <Form onSubmit={handleLogin}>
+                  {/* EMAIL */}
                   <div style={styles.inputGroup}>
                     <FaEnvelope />
-                    <input placeholder="Email Address" style={styles.input} />
+                    <input
+                      type="email"
+                      placeholder="Email Address"
+                      style={styles.input}
+                      value={form.email}
+                      onChange={(e) =>
+                        setForm({ ...form, email: e.target.value })
+                      }
+                      required
+                    />
                   </div>
 
+                  {/* PASSWORD */}
                   <div style={styles.inputGroup}>
                     <FaLock />
                     <input
                       type={showPass ? "text" : "password"}
                       placeholder="Password"
                       style={styles.input}
+                      value={form.password}
+                      onChange={(e) =>
+                        setForm({ ...form, password: e.target.value })
+                      }
+                      required
                     />
+
                     <span onClick={() => setShowPass(!showPass)}>
                       {showPass ? <FaEyeSlash /> : <FaEye />}
                     </span>
                   </div>
 
-                  <Button style={styles.btn}>Login</Button>
+                  {/* BUTTON */}
+                  <Button type="submit" style={styles.btn} disabled={loading}>
+                    {loading ? "Logging in..." : "Login"}
+                  </Button>
                 </Form>
               </>
             ) : (
               <>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                   <div style={styles.inputGroup}>
                     <FaUser />
-                    <input placeholder="Full Name" style={styles.input} />
+                    <input
+                      placeholder="Full Name"
+                      name="full_name"
+                      value={formData.full_name}
+                      onChange={handleChange}
+                      style={styles.input}
+                      required
+                    />
                   </div>
 
                   <div style={styles.inputGroup}>
                     <FaPhone />
-                    <input placeholder="Phone Number" style={styles.input} />
+                    <input
+                      placeholder="Phone Number"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      style={styles.input}
+                      required
+                    />
                   </div>
 
                   <div style={styles.inputGroup}>
                     <FaEnvelope />
-                    <input placeholder="Email Address" style={styles.input} />
+                    <input
+                      placeholder="Email Address"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      style={styles.input}
+                      required
+                    />
                   </div>
 
                   <div style={styles.inputGroup}>
@@ -98,6 +236,10 @@ const AffiliateAuth = () => {
                       type={showPass ? "text" : "password"}
                       placeholder="Password"
                       style={styles.input}
+                      name="password"
+                      value={formData.password}
+                      onChange={handleChange}
+                      required
                     />
                     <span onClick={() => setShowPass(!showPass)}>
                       {showPass ? <FaEyeSlash /> : <FaEye />}
@@ -110,13 +252,18 @@ const AffiliateAuth = () => {
                       type={showConfirmPass ? "text" : "password"}
                       placeholder="Confirm Password"
                       style={styles.input}
+                      name="confirm_password"
+                      value={formData.confirm_password}
+                      onChange={handleChange}
                     />
                     <span onClick={() => setShowConfirmPass(!showConfirmPass)}>
                       {showConfirmPass ? <FaEyeSlash /> : <FaEye />}
                     </span>
                   </div>
 
-                  <Button style={styles.btn}>Create Account</Button>
+                  <Button type="submit" style={styles.btn}>
+                    Create Account
+                  </Button>
                 </Form>
               </>
             )}

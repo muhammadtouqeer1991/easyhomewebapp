@@ -13,7 +13,7 @@ export default function Footer() {
           {/* Left Section */}
           <Col md={4}>
             <Image
-              src="brandLogo.svg"
+              src="/brandLogo.svg"
               alt="Logo"
               width={280}
               height={90}
