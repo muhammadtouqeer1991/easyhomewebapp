@@ -11,6 +11,15 @@ const montserratSans = Montserrat({
   subsets: ["latin"],
 });
 
+export const metadata = {
+  title: "Easy Home - Mortgage & Real Estate Solutions",
+  description: "Find best mortgage and real estate solutions with Easy Home.",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${montserratSans.variable}`}>
