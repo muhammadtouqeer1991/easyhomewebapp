@@ -6,7 +6,7 @@ export async function POST(request) {
       await request.json();
 
     const transporter = nodemailer.createTransport({
-      host: "smtp.titan.email", // apna SMTP host
+      host: "smtp.titan.email",
       port: 465,
       secure: true,
       auth: {

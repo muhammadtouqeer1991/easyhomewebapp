@@ -49,7 +49,7 @@ const AffiliateAuth = () => {
 
     try {
       const response = await fetch(
-        "https://easyhomeapi.pakrealestatecrm.com/api/register.php",
+        "https://api.easyhomemortgage.ae/api/register.php",
         {
           method: "POST",
           headers: {
@@ -62,7 +62,6 @@ const AffiliateAuth = () => {
       const result = await response.json();
 
       if (result.status) {
-        // console.log("RESULT:", result);
         document.cookie = `token=${result.token}; path=/;`;
         localStorage.setItem("token", result.token);
         localStorage.setItem("user", JSON.stringify(result));
@@ -83,16 +82,13 @@ const AffiliateAuth = () => {
     setLoading(true);
 
     try {
-      const res = await fetch(
-        "https://easyhomeapi.pakrealestatecrm.com/api/login.php",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(form),
+      const res = await fetch("https://api.easyhomemortgage.ae/api/login.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify(form),
+      });
 
       const result = await res.json();
 
@@ -102,13 +98,11 @@ const AffiliateAuth = () => {
         localStorage.setItem("user", JSON.stringify(result.user));
 
         window.dispatchEvent(new Event("authChange"));
-
         router.push("/affiliate/dashboard");
       } else {
         alert(result.message);
       }
     } catch (error) {
-      console.log(error);
       alert("Something went wrong");
     }
 

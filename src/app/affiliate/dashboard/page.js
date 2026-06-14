@@ -40,7 +40,7 @@ export default function AffiliateDashboard() {
       setLoadingClients(true);
 
       const res = await fetch(
-        `https://easyhomeapi.pakrealestatecrm.com/api/get-clients.php?affiliate_id=${affiliateId}`,
+        `https://api.easyhomemortgage.ae/api/get-clients.php?affiliate_id=${affiliateId}`,
       );
 
       const data = await res.json();
@@ -88,12 +88,8 @@ export default function AffiliateDashboard() {
           <button
             style={styles.btn}
             onClick={() => {
-              // ❌ clear localStorage
               localStorage.clear();
-
               window.dispatchEvent(new Event("authChange"));
-
-              // ❌ clear cookie (IMPORTANT)
               document.cookie =
                 "token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
 
@@ -104,7 +100,6 @@ export default function AffiliateDashboard() {
           </button>
         </div>
 
-        {/* AFFILIATE INFO */}
         <div style={styles.card}>
           <h3>Welcome, {user.full_name}</h3>
           <p>
@@ -115,7 +110,6 @@ export default function AffiliateDashboard() {
           </p>
         </div>
 
-        {/* STATS */}
         <div style={styles.grid}>
           <div style={styles.box}>
             <h2>{clients.length}</h2>
@@ -133,17 +127,15 @@ export default function AffiliateDashboard() {
           </div>
         </div>
 
-        {/* REFERRAL LINK */}
         <div style={styles.card}>
           <h3>Your Referral Link</h3>
           <input
             style={styles.input}
             readOnly
-            value={`https://yourdomain.com/register?ref=${user?.referral_code}`}
+            value={`https://easyhomemortgage.ae/register?ref=${user?.referral_code}`}
           />
         </div>
 
-        {/* CLIENT TABLE */}
         <div style={styles.card}>
           <h3>My Clients</h3>
 

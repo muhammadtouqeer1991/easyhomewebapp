@@ -15,9 +15,6 @@ const Menu = () => {
 
   const isActive = (path) => pathname === path;
 
-  // =========================
-  // SCROLL STICKY
-  // =========================
   useEffect(() => {
     const handleScroll = () => {
       setSticky(window.scrollY > 80);
@@ -27,9 +24,6 @@ const Menu = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // =========================
-  // LOAD USER INITIALLY
-  // =========================
   const loadUser = () => {
     const token = localStorage.getItem("token");
     const storedUser = localStorage.getItem("user");
@@ -43,29 +37,20 @@ const Menu = () => {
 
   useEffect(() => {
     loadUser();
-
     const handleAuthChange = () => {
       loadUser();
     };
-
     window.addEventListener("authChange", handleAuthChange);
-
     return () => {
       window.removeEventListener("authChange", handleAuthChange);
     };
   }, []);
 
-  // =========================
-  // LOGOUT
-  // =========================
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-
-    setUser(null); // 🔥 instant UI update
-
+    setUser(null);
     window.dispatchEvent(new Event("authChange"));
-
     router.push("/affiliate");
   };
 

@@ -46,7 +46,7 @@ export default function AddClient() {
 
     try {
       const res = await fetch(
-        "https://easyhomeapi.pakrealestatecrm.com/api/add-client.php",
+        "https://api.easyhomemortgage.ae/api/add-client.php",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
