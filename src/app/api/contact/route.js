@@ -5,19 +5,19 @@ export async function POST(request) {
     const { name, email, phone, message } = await request.json();
 
     const transporter = nodemailer.createTransport({
-      host: "smtp.titan.email", // apna SMTP host
+      host: "smtp.hostinger.com", // apna SMTP host
       port: 465,
       secure: true,
       auth: {
-        user: "contact@pakrealestatecrm.com",
-        pass: "Contact@76500",
+        user: "contact@easyhomemortgage.ae",
+        pass: "Home@easy@2026",
       },
     });
 
     await transporter.sendMail({
-      from: `"Website Contact Form" <contact@pakrealestatecrm.com>`,
-      to: "toqeerabbasi7@gmail.com",
-      replyTo: email,
+      from: `"Website Contact Form" <contact@easyhomemortgage.ae>`,
+      to: "contact@easyhomemortgage.ae",
+      replyTo: "no-reply@easyhomemortgage.ae",
       subject: "New Contact Form Submission",
       html: `
 

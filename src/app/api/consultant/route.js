@@ -6,19 +6,19 @@ export async function POST(request) {
       await request.json();
 
     const transporter = nodemailer.createTransport({
-      host: "smtp.titan.email",
+      host: "smtp.hostinger.com",
       port: 465,
       secure: true,
       auth: {
-        user: "contact@pakrealestatecrm.com",
-        pass: "Contact@76500",
+        user: "contact@easyhomemortgage.ae",
+        pass: "Home@easy@2026",
       },
     });
 
     await transporter.sendMail({
-      from: `"Website Get Free Consultation" <contact@pakrealestatecrm.com>`,
-      to: "toqeerabbasi7@gmail.com",
-      replyTo: "no-reply@gmail.com",
+      from: `"Website Get Free Consultation" <contact@easyhomemortgage.ae>`,
+      to: "contact@easyhomemortgage.ae",
+      replyTo: "no-reply@easyhomemortgage.ae",
       subject: "New Get Free Consultation",
       html: `
 
