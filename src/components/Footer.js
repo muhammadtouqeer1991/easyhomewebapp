@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -85,11 +86,27 @@ export default function Footer() {
         style={{
           background: "#5fb43d",
           color: "#fff",
-          textAlign: "center",
-          padding: "12px",
+          padding: "15px 20px",
         }}
       >
-        Easy Home Mortgage © All Rights Reserved @ 2026
+        <div className="container d-flex justify-content-between align-items-center flex-wrap">
+          <span>
+            © {new Date().getFullYear()} EasyHome Mortgages. All Rights
+            Reserved.
+          </span>
+
+          <span>
+            Experience designed by{" "}
+            <strong>
+              <Link
+                className="text-white text-decoration-none"
+                href="https://www.domatrics.com/"
+              >
+                Domatrics
+              </Link>
+            </strong>
+          </span>
+        </div>
       </div>
     </footer>
   );
