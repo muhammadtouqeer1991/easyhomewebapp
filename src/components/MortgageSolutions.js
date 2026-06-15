@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FaArrowUp } from "react-icons/fa6";
 
@@ -54,7 +55,9 @@ export default function MortgageSolutions() {
               </p>
             </div>
 
-            <button className="view-btn">View all</button>
+            <Link href="/services">
+              <button className="view-btn">View all</button>
+            </Link>
           </div>
 
           {/* GRID */}

@@ -23,7 +23,7 @@ export default function GetInTouchSection() {
     {
       icon: <FaEnvelope />,
       title: "Mail:",
-      text: "info@easyhomemortgage.com",
+      text: "info@easyhomemortgage.ae",
     },
     {
       icon: <FaClock />,

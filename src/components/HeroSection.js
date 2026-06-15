@@ -21,11 +21,15 @@ const HeroSection = () => {
           </p>
 
           <div className="btn-group">
-            <button className="cta">
-              Get Free Consultation <FaArrowRight />
-            </button>
+            <Link href="/contact-us">
+              <button className="cta">
+                Get Free Consultation <FaArrowRight />
+              </button>
+            </Link>
 
-            <button className="cta2">Check Your Eligibility</button>
+            <Link href="#calculator">
+              <button className="cta2">Check Your Eligibility</button>
+            </Link>
           </div>
         </div>
       </Container>

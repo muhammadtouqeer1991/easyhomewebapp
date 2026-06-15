@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FaKey, FaCheckCircle, FaHome, FaUniversity } from "react-icons/fa";
 
@@ -43,9 +44,11 @@ export default function PropertyFinanceSection() {
                   possession on time.
                 </p>
 
-                <Button className="custom-btn">
-                  Get Financing Help <FaKey className="ms-2" />
-                </Button>
+                <Link href="/#calculator">
+                  <Button className="custom-btn">
+                    Get Financing Help <FaKey className="ms-2" />
+                  </Button>
+                </Link>
               </div>
             </Col>
           </Row>

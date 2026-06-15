@@ -9,41 +9,49 @@ const mortgageServices = [
     title: "Residential Mortgages",
     desc: "Home financing solutions for individuals and families looking to purchase residential properties in Dubai.",
     image: "/mor01.png",
+    link: "/residential-mortgages",
   },
   {
     title: "Non-Residential Mortgages",
     desc: "Mortgage support for non-residents and overseas investors interested in Dubai real estate opportunities.",
     image: "/mor02.png",
+    link: "/non-resident-mortgage",
   },
   {
     title: "Self Employed Mortgage",
     desc: "Tailored mortgage solutions for entrepreneurs, freelancers, and self-employed professionals.",
     image: "/mor03.png",
+    link: "/self-employed-mortgages",
   },
   {
     title: "Developer-Based Mortgage",
     desc: "Financing assistance for off-plan and developer-linked property purchases with flexible payment structures.",
     image: "/mor04.png",
+    link: "/developer-based-transaction",
   },
   {
     title: "Handover Project",
     desc: "Support for managing final property handover payments with suitable financing options.",
     image: "/mor05.png",
+    link: "/handover-payment",
   },
   {
     title: "Buyout Transactions",
     desc: "Transfer your existing mortgage to a better financing option with improved terms and support.",
     image: "/mor06.png",
+    link: "/buyout-transaction",
   },
   {
     title: "Equity Release",
     desc: "Unlock the value of your property to access funds for investments, business, or personal needs.",
     image: "/mor07.png",
+    link: "/equity-release",
   },
   {
     title: "Seller Buyout",
     desc: "Financing support for ownership transfers and buyout arrangements between property stakeholders.",
     image: "/mor08.png",
+    link: "/seller-buyout",
   },
 ];
 
@@ -69,7 +77,7 @@ const MortgageServices = () => {
 
                     <p className="card-text">{service.desc}</p>
 
-                    <Link href="#" className="know-btns">
+                    <Link href={service?.link} className="know-btns">
                       Know more
                     </Link>
                   </Card.Body>
@@ -96,8 +104,6 @@ const MortgageServices = () => {
           font-weight: 800;
           color: #000;
         }
-
-        
 
         .image-wrapper {
           overflow: hidden;

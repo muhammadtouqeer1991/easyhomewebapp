@@ -42,11 +42,35 @@ export default function Footer() {
           <Col md={2} xs={6}>
             <h5 className="fw-bold">Quick Links</h5>
             <ul className="list-unstyled mt-3">
-              <li>Home</li>
-              <li>About Us</li>
-              <li>Contact Us</li>
-              <li>Our Team</li>
-              <li>Calculator</li>
+              <li>
+                <Link className="text-decoration-none text-dark" href="/">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-decoration-none text-dark"
+                  href="/about-us"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-decoration-none text-dark"
+                  href="/contact-us"
+                >
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-decoration-none text-dark"
+                  href="#calculator"
+                >
+                  Calculator
+                </Link>
+              </li>
               <li>Blogs</li>
             </ul>
           </Col>
@@ -55,11 +79,46 @@ export default function Footer() {
           <Col md={3} xs={6}>
             <h5 className="fw-bold">Services</h5>
             <ul className="list-unstyled mt-3">
-              <li>Resident Mortgage</li>
-              <li>Non-Resident Mortgage</li>
-              <li>Equity Release</li>
-              <li>Golden Visa</li>
-              <li>Property Investment</li>
+              <li>
+                <Link
+                  className="text-decoration-none text-dark"
+                  href="/residential-mortgages"
+                >
+                  Residential Mortgage
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-decoration-none text-dark"
+                  href="/non-resident-mortgage"
+                >
+                  Non-Resident Mortgage
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-decoration-none text-dark"
+                  href="/equity-release"
+                >
+                  Equity Release
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-decoration-none text-dark"
+                  href="/handover-payment"
+                >
+                  Handover payment
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-decoration-none text-dark"
+                  href="/seller-buyout"
+                >
+                  Seller Buyout
+                </Link>
+              </li>
             </ul>
           </Col>
 
@@ -68,7 +127,7 @@ export default function Footer() {
             <h5 className="fw-bold">Our Contact</h5>
             <ul className="list-unstyled mt-3">
               <li className="d-flex align-items-center gap-2 mb-2">
-                <FiMail /> info@easyhomemortgage.com
+                <FiMail /> info@easyhomemortgage.ae
               </li>
               <li className="d-flex align-items-center gap-2 mb-2">
                 <FiCalendar /> Mon - Fri 09:00 - 18:00

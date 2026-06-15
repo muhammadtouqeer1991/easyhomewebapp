@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 
@@ -212,9 +213,11 @@ export default function MortgageCalculators() {
                         This calculation is based off of live products in our
                         database
                       </small>
-                      <button className="cta">
-                        Speak With a Mortgage Expert
-                      </button>
+                      <Link href="/contact-us">
+                        <button className="cta">
+                          Speak With a Mortgage Expert
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
