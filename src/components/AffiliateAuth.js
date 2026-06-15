@@ -33,9 +33,18 @@ const AffiliateAuth = () => {
   });
 
   const handleChange = (e) => {
+    let { name, value } = e.target;
+
+    if (name === "phone") {
+      value = value.replace(/[^0-9+]/g, "");
+      if (!value.startsWith("+971")) {
+        value = "+971" + value.replace(/\D/g, "");
+      }
+    }
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
@@ -234,6 +243,10 @@ const AffiliateAuth = () => {
                       value={formData.password}
                       onChange={handleChange}
                       required
+                      minLength={8}
+                      maxLength={8}
+                      pattern=".{8}"
+                      title="Password must be exactly 8 characters"
                     />
                     <span onClick={() => setShowPass(!showPass)}>
                       {showPass ? <FaEyeSlash /> : <FaEye />}
@@ -249,6 +262,10 @@ const AffiliateAuth = () => {
                       name="confirm_password"
                       value={formData.confirm_password}
                       onChange={handleChange}
+                      minLength={8}
+                      maxLength={8}
+                      pattern=".{8}"
+                      title="Password must be exactly 8 characters"
                     />
                     <span onClick={() => setShowConfirmPass(!showConfirmPass)}>
                       {showConfirmPass ? <FaEyeSlash /> : <FaEye />}
