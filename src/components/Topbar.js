@@ -17,10 +17,10 @@ const Topbar = () => {
               <ul className="list-unstyled m-0 d-flex flex-wrap align-items-center gap-lg-2 gap-md-2 gap-sm-2 gap-2">
                 <li className="d-lg-flex d-none">
                   <Link
-                    href="mailto:info@easyhomemortgage.com"
+                    href="mailto:info@easyhomemortgage.ae"
                     className="text-decoration-none black fs-8 text-white"
                   >
-                    <MdEmail size={18} /> info@easyhomemortgage.com
+                    <MdEmail size={18} /> info@easyhomemortgage.ae
                   </Link>
                 </li>
                 <li className="text-decoration-none black fs-8 d-lg-flex d-none align-items-center gap-lg-1 text-white border-start ps-lg-2 border-end pe-lg-2">
