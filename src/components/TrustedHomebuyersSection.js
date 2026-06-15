@@ -18,8 +18,8 @@ export default function TrustedHomebuyersSection() {
       bg: "#e7f1e4",
     },
     {
-      name: "Mohammed A.",
-      text: "EasyHome Mortgages helped us secure a better rate and guided us throughout the entire process.",
+      name: "Fatima A.",
+      text: "Excellent service and clear communication throughout the entire mortgage process.",
       bg: "#dfe8f7",
     },
   ];
